@@ -1,0 +1,216 @@
+/* comps/acts/CompleteWordAct.module.css */
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainCard {
+  --btn-blue: #a8d0e6;
+  --btn-blue-hover: #91c2dc;
+  --purple-box: #d099e6;
+  --text-color: #333;
+  --green-correct: #2e7d32;
+  --red-wrong: #d32f2f;
+  --next-btn-color: #00334e;
+
+  /* The "Frosted Glass" Blur Effect */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  /* Subtle white border */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  /* FULL WIDTH SETTINGS from original CSS */
+  width: 85%;
+  max-width: 100%;
+  height: 96%;
+
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titleText {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* --- Game Area --- */
+.gameArea {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.wordDisplayContainer {
+  background-color: rgba(240, 240, 232, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 40px;
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.wordPuzzle {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+}
+
+/* The Purple Box */
+.missingBox {
+  background-color: var(--purple-box);
+  color: white;
+  min-width: 50px;
+  height: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  margin: 0 5px;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+
+/* Options */
+.optionsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.optionBtn {
+  background-color: var(--btn-blue);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  min-width: 60px;
+  transition: transform 0.1s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.optionBtn:active {
+  transform: scale(0.95);
+}
+.optionBtn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* --- Footer Area --- */
+.gameFooter,
+.summaryFooter {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.scoreBadge {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px 15px;
+  font-size: 1rem;
+  color: #555;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.nextBtn {
+  background-color: var(--next-btn-color);
+  color: white;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.floatNext {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+/* --- Summary Styles --- */
+.summaryArea {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.summaryList {
+  margin-top: 20px;
+  max-height: 350px;
+  overflow-y: auto;
+  font-size: 1.2rem;
+  padding-right: 10px;
+  flex-grow: 1;
+}
+
+.summaryItem {
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.sNum {
+  color: var(--red-wrong);
+  font-weight: bold;
+  margin-right: 5px;
+}
+.sCorrectNum {
+  color: var(--green-correct);
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.sWrongText {
+  color: var(--red-wrong);
+}
+.sCorrectText {
+  color: var(--green-correct);
+}
+
+.sBracket {
+  color: var(--green-correct);
+  margin-left: 10px;
+  font-weight: 500;
+}
