@@ -1,166 +1,7 @@
-// import styled from 'styled-components';
-// import Link from 'next/link';
-// import { useRouter } from 'next/router';
-// import { useEffect, useState } from 'react';
-// import UserDropdown from 'comps/UserDropdown'; // 👈 1. IMPORT DROPDOWN
-
-// const Styled = styled.div`
-//   background-color: var(--l);
-//   min-height: 100vh;
-
-//   .wrap {
-//     padding: 20px;
-//     width: 1100px;
-//     margin: 0 auto;
-//     background-color: white;
-//     position: relative;
-//   }
-
-//   .mascot {
-//     margin: 0 auto;
-//   }
-//   .imgIcon {
-//     position: absolute;
-//     color: #dbf7c3;
-//   }
-
-//   h1 {
-//     font-family: var(--font1);
-//     font-weight: bold;
-//     font-size: 3.53rem;
-//     text-align: center;
-//     margin-top: 80px;
-//     color: #2b7d10;
-//     line-height: 1;
-//   }
-
-//   .tagline {
-//     font-weight: bold;
-//     text-align: center;
-//     font-size: 1.1rem;
-//     font-family: var(--font2);
-//     color: var(--h2);
-//   }
-
-//   .actionBtn {
-//     font-size: 2rem;
-//     background-color: var(--h2);
-//     margin: 10px 10px 10px auto;
-//     padding: 5px 20px;
-//     border-radius: 10px;
-//     overflow: visible;
-//     position: absolute;
-//     right: 20px;
-//     bottom: 20px;
-//     color: white;
-//     cursor: pointer;
-//     border: 0px solid white;
-//     box-shadow: var(--shadow3);
-//     text-decoration: none;
-//   }
-// `;
-
-// var bgList = [
-//   {
-//     id: 'icon1.png',
-//     pos: [
-//       { x: 450, y: 30 },
-//       { x: 110, y: 220 },
-//       { x: 920, y: 450 },
-//     ],
-//   },
-//   {
-//     id: 'icon2.png',
-//     pos: [
-//       { x: 50, y: 100 },
-//       { x: 950, y: 100 },
-//       { x: 270, y: 320 },
-//     ],
-//   },
-//   {
-//     id: 'icon3.png',
-//     pos: [
-//       { x: 700, y: 20 },
-//       { x: 700, y: 350 },
-//       { x: 40, y: 350 },
-//     ],
-//   },
-//   {
-//     id: 'icon4.png',
-//     pos: [
-//       { x: 830, y: 250 },
-//       { x: 20, y: 550 },
-//     ],
-//   },
-//   {
-//     id: 'icon5.png',
-//     pos: [
-//       { x: 950, y: 310 },
-//       { x: 170, y: 450 },
-//     ],
-//   },
-//   {
-//     id: 'icon6.png',
-//     pos: [
-//       { x: 250, y: 80 },
-//       { x: 750, y: 500 },
-//       { x: 350, y: 500 },
-//     ],
-//   },
-// ];
-
-// export default function Intro(props) {
-//   const router = useRouter();
-//   const basePath = router.basePath || '';
-
-//   return (
-//     <Styled>
-//       <div className="wrap">
-//         {/* 🟢 2. ADD USER DROPDOWN HERE */}
-//         <UserDropdown />
-
-//         <div style={{ position: 'relative' }}>
-//           {bgList.map((item) => (
-//             <>
-//               {item.pos.map((p) => (
-//                 <img
-//                   key={`${item.id}-${p.x}-${p.y}`}
-//                   className="imgIcon"
-//                   src={`${basePath}/kon/${item.id}`}
-//                   alt=""
-//                   style={{ top: p.y, left: p.x }}
-//                 />
-//               ))}
-//             </>
-//           ))}
-//         </div>
-//         <div style={{ zIndex: 1, position: 'relative' }}>
-//           <img src={`${basePath}/img/konzeptes/logo.png`} alt="logo" />
-//           <header>
-//             <h1 style={{ fontWeight: 'bold' }}>WELCOME TO KONZEPTES!</h1>
-//             <p className="tagline">
-//               Explore our learning modules and improve your language skills.
-//             </p>
-//           </header>
-//           <img
-//             className="mascot"
-//             src={`${basePath}/img/konzeptes/kea.png`}
-//             alt="mascot"
-//           />
-
-//           <Link className="actionBtn" href="/home">
-//             Let&apos;s Go
-//           </Link>
-//         </div>
-//       </div>
-//     </Styled>
-//   );
-// }
-
-import styled, { keyframes } from 'styled-components';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import UserDropdown from 'comps/UserDropdown';
+import styled, { keyframes } from "styled-components";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import UserDropdown from "comps/UserDropdown";
 
 // Gentle floating animation for the mascot to make it feel alive
 const float = keyframes`
@@ -176,7 +17,7 @@ const Styled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+
   margin: 0;
   padding: 2rem;
   box-sizing: border-box;
@@ -195,6 +36,41 @@ const Styled = styled.div`
     padding: 40px 50px;
     box-sizing: border-box;
     overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .wrap {
+      padding: 20px;
+      height: auto;
+      min-height: 100vh;
+    }
+
+    .center-content {
+      gap: 1rem;
+    }
+
+    .mascot {
+      height: 25vh;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+    }
+
+    .bottom-row {
+      margin-top: auto;
+      justify-content: center;
+    }
+
+    .actionBtn {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+    }
   }
 
   /* --- 1. Top Bar --- */
@@ -223,7 +99,7 @@ const Styled = styled.div`
   }
 
   h1 {
-    font-family: var(--font1, 'Arial', sans-serif);
+    font-family: var(--font1, "Arial", sans-serif);
     font-weight: 900;
     font-size: clamp(2.5rem, 4.5vw, 4rem);
     color: #2b7d10;
@@ -237,7 +113,7 @@ const Styled = styled.div`
   .tagline {
     font-weight: 700;
     font-size: clamp(1.1rem, 2vw, 1.4rem);
-    font-family: var(--font2, 'Arial', sans-serif);
+    font-family: var(--font2, "Arial", sans-serif);
     color: #00b4d8;
     margin: 0;
     text-align: center;
@@ -259,6 +135,7 @@ const Styled = styled.div`
     align-items: flex-end;
     width: 100%;
     z-index: 20;
+    margin-top: auto;
     padding-top: 20px;
   }
 
@@ -325,7 +202,7 @@ const Styled = styled.div`
 
 var bgList = [
   {
-    id: 'icon1.png',
+    id: "icon1.png",
     pos: [
       { x: 450, y: 30 },
       { x: 110, y: 220 },
@@ -333,7 +210,7 @@ var bgList = [
     ],
   },
   {
-    id: 'icon2.png',
+    id: "icon2.png",
     pos: [
       { x: 50, y: 100 },
       { x: 950, y: 100 },
@@ -341,7 +218,7 @@ var bgList = [
     ],
   },
   {
-    id: 'icon3.png',
+    id: "icon3.png",
     pos: [
       { x: 700, y: 20 },
       { x: 700, y: 350 },
@@ -349,21 +226,21 @@ var bgList = [
     ],
   },
   {
-    id: 'icon4.png',
+    id: "icon4.png",
     pos: [
       { x: 830, y: 250 },
       { x: 20, y: 550 },
     ],
   },
   {
-    id: 'icon5.png',
+    id: "icon5.png",
     pos: [
       { x: 950, y: 310 },
       { x: 170, y: 450 },
     ],
   },
   {
-    id: 'icon6.png',
+    id: "icon6.png",
     pos: [
       { x: 250, y: 80 },
       { x: 750, y: 500 },
@@ -374,7 +251,7 @@ var bgList = [
 
 export default function Intro(props) {
   const router = useRouter();
-  const basePath = router.basePath || '';
+  const basePath = router.basePath || "";
 
   // Converts your original coordinates into responsive percentages
   const getResponsivePos = (x, y) => {

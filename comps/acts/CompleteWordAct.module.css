@@ -214,3 +214,103 @@
   margin-left: 10px;
   font-weight: 500;
 }
+
+
+/* ===== MOBILE FIX FOR COMPLETE WORD ===== */
+@media (max-width: 768px) {
+
+  .wrapper {
+    position: relative;   /* 🔥 remove absolute */
+    height: auto;
+    padding: 10px;
+    align-items: flex-start; /* 🔥 avoid vertical centering */
+  }
+
+  .mainCard {
+    width: 100%;          /* full width */
+    height: auto;         /* 🔥 remove fixed height */
+    padding: 15px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  /* TITLE */
+  .titleText {
+    font-size: 15px;      /* 🔥 reduce */
+    margin-bottom: 12px;
+  }
+
+  /* GAME AREA */
+  .gameArea {
+    flex-grow: 0;         /* 🔥 prevent stretch */
+  }
+
+  .wordDisplayContainer {
+    padding: 20px;        /* 🔥 reduce */
+    min-height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .wordPuzzle {
+    font-size: 1.6rem;    /* 🔥 reduce big text */
+    gap: 6px;
+  }
+
+  .missingBox {
+    min-width: 35px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  /* OPTIONS */
+  .optionsContainer {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .optionBtn {
+    font-size: 1.2rem;    /* 🔥 smaller */
+    padding: 8px 14px;
+    min-width: 45px;
+  }
+
+  /* FOOTER */
+  .gameFooter,
+  .summaryFooter {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .scoreBadge {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .nextBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  height: 40px;
+  padding: 0px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  display: inline-flex;
+  box-shadow: 0 2px 4px #0000001a;
+  }
+
+  .floatNext {
+    position: static;     /* 🔥 remove floating */
+  }
+
+  /* SUMMARY */
+  .summaryList {
+    font-size: 1rem;
+    max-height: 250px;
+  }
+
+}

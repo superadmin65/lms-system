@@ -269,11 +269,7 @@ export default function HomeView() {
         className={`auth-card-container ${isSignup ? 'register-mode' : 'login-mode'}`}
       >
         {/* Your form code exactly as it was... */}
-        <img
-          src="/lms-system/img/konzeptes/logo.png"
-          className="auth-logo"
-          alt="Logo"
-        />
+        <img src="/img/konzeptes/logo.png" className="auth-logo" alt="Logo" />
 
         <form onSubmit={handleAuth} className="auth-form">
           {!isSignup ? (

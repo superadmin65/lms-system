@@ -364,3 +364,118 @@
     font-size: 60px;
   }
 }
+
+
+/* ===== MOBILE FIX FOR MCQ AUDIO ===== */
+@media (max-width: 768px) {
+
+  .wrapper {
+    position: relative;   
+    height: auto;
+    padding: 10px;
+  }
+
+  .mainCard {
+    width: 100%;          
+    height: auto;         
+    padding: 15px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  .mainCardInner {
+    height: auto;
+    padding-right: 0;
+  }
+
+  /* TITLE */
+  .title {
+    font-size: 16px;      
+    margin-bottom: 12px;
+  }
+
+  /* MEDIA */
+  .mediaWrap {
+    margin-bottom: 12px;
+  }
+
+  .imageWrap img {
+    max-height: 180px;    
+  }
+
+  .customAudioPlayer {
+    gap: 10px;
+    padding: 8px 12px;
+    max-width: 100%;
+  }
+
+  .playPauseBtn {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .timeDisplay {
+    font-size: 12px;
+    min-width: 60px;
+  }
+
+  /* QUESTION */
+  .qTitle {
+    font-size: 16px;
+  }
+
+  .question {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  /* OPTIONS */
+  .options {
+    gap: 10px;
+  }
+
+  .radio {
+    width: 22px;
+    height: 22px;
+  }
+
+  .optLabel {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  /* CONTROLS */
+  .controlsRow {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .score {
+    font-size: 14px;
+  }
+
+  .nextBtn {
+    cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  height: 40px;
+  padding: 0px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  display: inline-flex;
+  box-shadow: 0 2px 4px #0000001a;
+  }
+
+  /* RESULT MARK */
+  .mark {
+    font-size: 50px;
+    right: 10px;
+  }
+
+}

@@ -229,7 +229,7 @@ export default function UserDropdown() {
     // 4. Redirect much faster! Changed from 2000 to 600
     setTimeout(() => {
       // window.location.href forces a hard browser redirect/refresh
-      window.location.href = '/lms-system';
+      window.location.href = '/';
     }, 600);
   };
 

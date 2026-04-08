@@ -87,7 +87,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* ✅ Favicon stays here */}
-          <link rel="icon" href="/lms-system/favicon.ico" />
+          <link rel="icon" href="/favicon.ico" />
           <meta charSet="utf-8" />
         </Head>
         <body>

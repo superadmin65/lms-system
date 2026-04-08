@@ -215,3 +215,65 @@
     padding: 20px 10px;
   }
 }
+
+
+/* ===== MOBILE FIX FOR MCQ ===== */
+@media (max-width: 768px) {
+
+  .wrapper {
+    position: relative;  
+    height: auto;
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;          
+    height: auto;         
+    padding: 15px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  .main {
+    padding: 15px 8px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .question {
+    font-size: 16px;
+  }
+
+  .options {
+    max-width: 100%;      
+  }
+
+  .optionLabel {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .radio {
+    width: 22px;
+    height: 22px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;          
+    font-size: 14px;
+  }
+
+  .score {
+    font-size: 0.9rem;
+  }
+
+}

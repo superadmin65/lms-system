@@ -301,40 +301,137 @@ textarea {
   }
 }
 */
-/* 1. Base List Item - Smooth & Clean */
-.gojVvr ol li {
-  padding: 12px 16px; /* Increased padding for a better click target */
-  margin: 4px 8px; /* Adds breathing room from the edges */
-  border: 1px solid transparent; /* Removes the harsh border */
-  border-radius: 8px; /* Modern rounded corners */
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  color: var(--darkColor);
+/* ================= IMPROVED MOBILE LAYOUT ================= */
+@media (max-width: 768px) {
 
-  /* The magic for smooth, modern transitions */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+ 
+  /* body > div {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+  } */
 
-/* 2. Hover State - The Interactive Slide */
-.gojVvr ol li:hover {
-  background-color: var(--lightHColor); /* Soft highlight background */
-  transform: translateX(2px); /* Gentle slide to the right on hover */
-  border-color: var(--h); /* Subtle border pop */
-}
 
-/* 3. Selected State - Clear & Distinct */
-.gojVvr ol li.selected {
-  background-color: var(--h2); /* Uses your teal/purple accent color */
-  color: #ffffff; /* Crisp white text for contrast */
-  font-weight: bold;
-  box-shadow: var(--shadow); /* Gives it a slightly raised look */
-  transform: translateX(2px); /* Keeps it indented while active */
-}
+  /* .gojVvr {
+    display: block !important;
+    width: 100% !important;
+    position: sticky; 
+    top: 0;
+    z-index: 999; 
+    background: var(--l2); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-height: 250px; 
+    overflow-y: auto;
+  } */
 
-/* Optional: Neaten up the numbers so they align perfectly */
-.gojVvr ol li .numbering {
-  margin-right: 12px;
-  opacity: 0.9;
+  .gojVvr {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+
+    width: 85vw !important;   
+    max-width: 360px !important;
+
+    height: 100vh !important;
+
+    z-index: 9999 !important;
+    background: var(--l2);
+
+    overflow-y: auto;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.35);
+  }
+
+   /* .gojVvr {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 80vw !important;      
+    min-width: 280px !important; 
+    max-width: 320px !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    background: var(--l2) !important;
+    overflow-y: auto !important;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.3);
+  } */
+
+
+  .gojVvr + div {
+    position: relative;
+    z-index: 1;
+    /* width: 100% !important; */
+     width: auto;
+    padding: 15px;
+    margin-top: 0;
+  }
+
+  
+  .gojVvr ol {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .gojVvr ol li {
+    flex: 0 0 auto; 
+    min-width: 160px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--h);
+  }
+
+
+  .question-container, 
+  .exercise-container, 
+  div[style*="max-width"],
+  article {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    overflow-wrap: break-word;
+  }
+
+
+  .mainPlaceHolder {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s ease;
+  }
+
+  /* 👇 when sidebar is open, shift content slightly */
+  /* body.sidebar-open .mainPlaceHolder {
+     display: none !important;
+         
+  } */
+
+  body.sidebar-open .mainPlaceHolder {
+  /* pointer-events: none;
+  user-select: none;
+  opacity: 0.3; */
+  visibility: hidden;
 }
+   /* body.sidebar-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+  } */
+   body.sidebar-open::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9998;
+  pointer-events: none; 
+}
+  
+}
+ 

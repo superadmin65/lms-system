@@ -229,3 +229,97 @@
   font-weight: 600;
   display: inline-block;
 }
+
+
+/* ===== MOBILE FIX FOR CLASSIFY SENTENCE ===== */
+@media (max-width: 768px) {
+
+  .wrapper {
+    position: relative;   /* 🔥 remove absolute */
+    height: auto;
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;          /* full width */
+    height: auto;         /* 🔥 remove fixed height */
+    padding: 15px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  /* TITLE */
+  .title {
+    font-size: 16px;      /* 🔥 reduce size */
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  /* QUESTION */
+  .questionHeader {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .questionNum {
+    font-size: 16px;
+  }
+
+  .qText {
+    font-size: 15px;
+  }
+
+  /* OPTIONS */
+  .optionsRow {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .optBtn {
+    font-size: 14px;
+    padding: 10px 12px;
+    min-width: 100px;
+    margin: 6px;
+  }
+
+  /* ICON */
+  .markIcon {
+    right: -20px;
+    font-size: 18px;
+  }
+
+  /* CONTROLS */
+  .controlsRow {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .score {
+    font-size: 14px;
+    padding: 6px 10px;
+  } 
+
+  .hintBtn,
+  .nextBtn {
+    cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  height: 40px;
+  padding: 0px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  display: inline-flex;
+  box-shadow: 0 2px 4px #0000001a;
+  }
+
+  /* SUMMARY */
+  .summary {
+    max-height: 250px;
+  }
+
+}

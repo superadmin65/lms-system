@@ -1,5 +1,7 @@
 /* comps/acts/WordSearchAct.module.css */
 
+
+
 .wrapper {
   width: 100%;
   height: 100%;
@@ -15,7 +17,7 @@
   background-color: transparent !important;
 }
 
-/* Glass Card */
+
 .mainCard {
   --highlight-border: #ff4081;
   --text-color: #333;
@@ -233,5 +235,209 @@
   to {
     transform: translate(-50%, 0);
     opacity: 1;
+  }
+}
+
+
+/* ===== CLEAN MOBILE FIX (ONLY SHRINK GRID) ===== */
+/* @media (max-width: 768px) {
+
+  .cell {
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+  }
+  .wrapper {
+    align-items: flex-start !important; 
+    padding-top: 10px;
+    justify-content: center;
+  }
+
+  .gridWrapper {
+    padding: 6px;
+     margin-top: 0;
+     justify-content: center;
+  }
+
+  .wordGrid {
+    
+    justify-content: center;
+  }
+
+  .titleText {
+    font-size: 0.95rem;
+  }
+
+  .wordList {
+    display: flex;              
+    flex-wrap: wrap;
+    justify-content: center;    
+    gap: 8px;
+    text-align: center;
+  }
+
+  .wordItem {
+    display: inline-block;
+    padding: 4px 8px;
+    white-space: nowrap;        
+  }
+
+  .scoreBadge {
+    font-size: 0.8rem;
+  }
+
+  .actionBtn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .header {
+    padding: 6px 5px;   
+  }
+  .titleText {
+    margin-bottom: 4px; 
+  }
+
+  .gameArea {
+    padding: 4px;       
+    align-items: flex-start; 
+    flex-grow: 0;
+    justify-content: center;
+  }
+
+   .wordStrip {
+    margin-top: 6px;   
+    padding: 4px;
+  }
+
+  .wordList {
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .gameFooter {
+    margin-top: 6px;
+    padding: 6px 10px;
+  }
+  .mainCard {
+    display: flex;
+    height: auto !important;
+    flex-direction: column;
+    justify-content: flex-start; 
+  }
+
+
+}
+
+
+
+ */
+
+
+ /* 📱 MOBILE RESPONSIVE FIX */
+@media (max-width: 768px) {
+
+  /* Wrapper */
+  .wrapper {
+    position: relative;              
+    height: auto;
+    padding: 10px;
+    align-items: flex-start;         
+  }
+
+  /* Card */
+  .mainCard {
+    width: 100%;
+    height: auto;                    
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  /* Header */
+  .header {
+    padding: 6px;
+  }
+
+  .titleText {
+    font-size: 0.9rem;               
+    margin-bottom: 4px;
+  }
+
+  /* Game Area */
+  .gameArea {
+    flex-grow: 0;                    
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Grid Wrapper */
+  .gridWrapper {
+    padding: 6px;
+    display: flex;
+    justify-content: center;         
+  }
+
+  /* Grid */
+  .wordGrid {
+    justify-content: center;
+  }
+
+  /* Cells */
+  .cell {
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+  }
+
+  /* Word Strip */
+  .wordStrip {
+    padding: 6px;
+    min-height: auto;
+  }
+
+  .wordList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;         
+    gap: 6px;
+    max-height: none;               
+    overflow: visible;
+  }
+
+  .wordItem {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+    white-space: nowrap;             
+  }
+
+  /* Footer */
+  .gameFooter {
+    padding: 8px 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .scoreBadge {
+    font-size: 0.8rem;
+  }
+
+  .actionBtn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  /* Victory */
+  .victoryToast {
+    bottom: 60px;
+    font-size: 0.85rem;
+  }
+  .highlightLine {
+    height: 20px;            
+    border-radius: 10px;
+    transform-origin: center;
+    margin-top: 3px;
+    opacity: 0.9;
   }
 }

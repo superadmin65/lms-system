@@ -405,3 +405,110 @@
     top: 70%;
   }
 }
+
+
+/* ===== MOBILE FIX FOR INFORMATION PROCESSING ===== */
+@media (max-width: 768px) {
+
+  .wrapper {
+    position: relative;   
+    height: auto;
+    padding: 10px;
+  }
+
+  .mainCard {
+    width: 100%;          
+    height: auto;         
+    padding: 15px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  .mainCardInner {
+    height: auto;
+    padding-right: 0;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  /* IMAGE FIX */
+  .imageWrap img {
+    width: 100% !important;   
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  /* AUDIO PLAYER */
+  .customAudioPlayer {
+    gap: 10px;
+    padding: 8px 12px;
+  }
+
+  .playPauseBtn {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .timeDisplay {
+    font-size: 12px;
+  }
+
+  /* QUESTION */
+  .question {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  /* OPTIONS */
+  .options {
+    width: 100%;
+  }
+
+  .optLabel {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .radio {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* CONTROLS */
+  .controlsRow {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .nextBtn {
+    cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  height: 40px;
+  padding: 0px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  display: inline-flex;
+  box-shadow: 0 2px 4px #0000001a;
+  }
+
+  .score {
+    font-size: 0.9rem;
+  }
+
+
+  .mark {
+    font-size: 50px;
+    right: 10px;
+  }
+
+}

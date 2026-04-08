@@ -239,3 +239,179 @@
     padding: 20px 10px;
   }
 }
+
+
+/* ===== MOBILE FIX FOR SEQUENCE ACT ===== */
+@media (max-width: 768px) {
+
+  .wrapper {
+    position: relative;   /* 🔥 remove absolute */
+    height: auto;
+    padding: 10px;
+  }
+
+  .mainCard {
+    width: 100%;          /* full width */
+    height: auto;         /* 🔥 remove fixed height */
+    padding: 15px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  .mainCardInner {
+    height: auto;
+    justify-content: flex-start; /* 🔥 avoid space gaps */
+  }
+
+  .headerRow {
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  /* .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+  } */
+   .title {
+    font-size: 16px;        
+    line-height: 1.4;      
+    padding: 6px 10px;      
+    margin-bottom: 8px;     
+  }
+
+  .small {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .score {
+    font-size: 14px;
+  }
+
+  /* CANVAS AREA */
+  .canvasArea {
+    min-height: 250px;
+  }
+
+  /* WORD BLOCKS */
+  .wordBlock {
+    font-size: 16px;
+    height: 36px;
+    padding: 0 10px;
+    border-radius: 6px;
+  }
+
+  /* CONTROLS */
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btnGroup {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .resultMessage {
+    font-size: 16px;
+  }
+
+}
+
+
+
+/* ===== MOBILE FIX FOR DRAG DROP ===== */
+@media (max-width: 768px) {
+
+  .wrapper {
+    position: relative;  
+    height: auto;
+    padding: 10px;
+  }
+
+  .mainCard {
+    width: 100%;          
+    height: auto;         
+    padding: 15px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  .mainCardInner {
+    height: auto;
+  }
+
+  /* TITLE FIX */
+  .title {
+    font-size: 16px;      
+    line-height: 1.4;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+  }
+
+  /* GAME AREA */
+  .gameArea {
+    padding: 10px;
+    flex-grow: 0;        
+  }
+
+  /* FLOW TEXT */
+  .textContent {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .dropZoneFlow {
+    min-width: 80px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  /* IMAGE MODE */
+  .absImg {
+    width: 60px !important;
+  }
+
+  .dropZoneAbs {
+    width: 110px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  /* WORD BANK */
+  .wordBank {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .option {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  /* BUTTON */
+  .nextBtn {
+    cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  height: 40px;
+  padding: 0px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  display: inline-flex;
+  box-shadow: 0 2px 4px #0000001a;
+  }
+
+}
