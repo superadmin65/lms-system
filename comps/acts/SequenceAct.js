@@ -651,6 +651,7 @@ export default function SequenceAct({ data }) {
   const [activityId, setActivityId] = useState('');
   const [title, setTitle] = useState('Sequence Activity');
 
+
   // --- 1. INITIALIZATION ---
   useEffect(() => {
     if (!data) return;
@@ -664,7 +665,6 @@ export default function SequenceAct({ data }) {
 
     setActivityId(generatedId);
     setTitle(rawTitle);
-
     const lines = rawText.split('\n').filter((line) => line.trim().length > 0);
     const parsedQueue = lines.map((line) => {
       const cleanLine = line.trim();
@@ -1027,7 +1027,12 @@ export default function SequenceAct({ data }) {
           {appState !== 'SUMMARY' && (
             <>
               <div className={styles.headerRow}>
-                <div className={styles.title}>{title}</div>
+                <div
+  className={styles.title}
+  dangerouslySetInnerHTML={{
+    __html: (title || '').replace(/\(/g, '<br>('),
+  }}
+/>
                 <div
                   className={styles.score}
                   style={{ display: appState !== 'LOADING' ? 'block' : 'none' }}
@@ -1072,12 +1077,18 @@ export default function SequenceAct({ data }) {
                   const isActive = startIdx === b.index;
                   const isCompleted = appState === 'ROUND_END';
 
-                  let bClass = styles.wordBlock;
-                  if (isActive) bClass += ` ${styles.wordBlockActive}`;
-                  if (isCompleted) bClass += ` ${styles.wordBlockCompleted}`;
-                  if (b.isShaking) bClass += ` ${styles.shake}`;
-                  if (b.isHint) bClass += ` ${styles.hintBorder}`;
+                  // 🎯 Shape logic based on question
+const shapeType = currentRound?.fullText?.length % 2 || 0;
+let shapeClass = '';
+if (shapeType === 0) shapeClass = styles.shapePlane;
+else shapeClass = styles.shapeBubble;
 
+let bClass = `${styles.wordBlock} ${shapeClass}`;
+
+if (isActive) bClass += ` ${styles.wordBlockActive}`;
+if (isCompleted) bClass += ` ${styles.wordBlockCompleted}`;
+if (b.isShaking) bClass += ` ${styles.shake}`;
+if (b.isHint) bClass += ` ${styles.hintBorder}`;
                   return (
                     <div
                       key={`block-${b.index}`}
